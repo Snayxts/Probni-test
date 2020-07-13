@@ -1,0 +1,233 @@
+import React, { useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [value, setValue] = useState();
+
+  const [list, setList] = useState([]);
+  const [name, setName] = useState("Josh Lithuan: "); //POSTAVITI IME
+
+  const texting = (event) => {
+    setValue(event.target.value);
+  };
+
+  function stopIt(event) {
+    event.preventDefault();
+    setList([...list, value]);
+
+    setValue("");
+  }
+
+  console.log(list);
+
+  const CHANNEL_ID = "ay6ECnaunFzRkgEf";
+
+  const drone = new window.Scaledrone(CHANNEL_ID);
+
+  drone.on("open", (error) => {
+    if (error) {
+      return console.error(error);
+    }
+    drone.publish({
+      room: "myApp23",
+      message: { message: value },
+    });
+  });
+
+  const room = drone.subscribe("myApp23");
+  room.on("open", (error) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("Connected to room");
+    }
+  });
+  room.on("message", (message) => console.log(message));
+
+  drone.on("error", (error) => console.error(error));
+
+  return (
+    <div className="theDisplay">
+      <form onSubmit={stopIt}>
+        <label>
+          <input
+            className="inputText"
+            type="text"
+            value={value}
+            onChange={texting}
+            placeholder="type"
+          />
+        </label>
+        <button type="submit" className="botunDisplay" disabled={!value}>
+          Sumbit
+        </button>
+      </form>
+      {list.map((value, index) => (
+        <div className="positioning" key={index}>
+          {name}
+          {value}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+//2
+//2
+//2
+//2
+//2
+
+import React, { useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [value, setValue] = useState();
+
+  const [list, setList] = useState([]);
+  const [name, setName] = useState("Josh Lithuan: "); //POSTAVITI IME
+
+  const texting = (event) => {
+    setValue(event.target.value);
+  };
+
+  function stopIt(event) {
+    event.preventDefault();
+    setList([...list, value]);
+
+    setValue("");
+  }
+
+  console.log(list);
+
+  const CHANNEL_ID = "ay6ECnaunFzRkgEf";
+
+  const drone = new window.Scaledrone(CHANNEL_ID);
+
+  drone.on("open", (error) => {
+    if (error) {
+      return console.error(error);
+    }
+    drone.publish({
+      room: "myApp23",
+      message: { message: value },
+    });
+  });
+
+  const room = drone.subscribe("myApp23");
+  room.on("open", (error) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("Connected to room");
+    }
+  });
+  room.on("message", (message) => console.log(message.data.message));
+
+  drone.on("error", (error) => console.error(error));
+
+  return (
+    <div className="theDisplay">
+      <form onSubmit={stopIt}>
+        <label>
+          <input
+            className="inputText"
+            type="text"
+            value={value}
+            onChange={texting}
+            placeholder="type"
+          />
+        </label>
+        <button type="submit" className="botunDisplay" disabled={!value}>
+          Sumbit
+        </button>
+      </form>
+      {list.map((value, index) => (
+        <div className="positioning" key={index}>
+          {name}
+          {value}
+        </div>
+      ))}
+    </div>
+  );
+}
+import React, { useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [value, setValue] = useState();
+
+  const [list, setList] = useState([]);
+  const [name, setName] = useState("Josh Lithuan: "); //POSTAVITI IME
+  const [store, setStore] = useState([]);
+  const texting = (event) => {
+    setValue(event.target.value);
+  };
+
+  function stopIt(event) {
+    event.preventDefault();
+    setList([...list, value]);
+
+    setValue("");
+  }
+
+  console.log(list);
+
+  const CHANNEL_ID = "ay6ECnaunFzRkgEf";
+
+  const drone = new window.Scaledrone(CHANNEL_ID);
+
+  drone.on("open", (error) => {
+    if (error) {
+      return console.error(error);
+    }
+    drone.publish({
+      room: "observable-myApp23",
+      message: { message: value },
+    });
+  });
+
+  const room = drone.subscribe("observable-myApp23");
+  room.on("open", (error) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("Connected to room");
+    }
+  });
+
+  room.on("message", (message) => console.log(message.data.message));
+  //room.on("data", (message, member) => {
+  //  if (member) {
+  //    setStore(message, member);
+  //  } else {
+  //
+  //  }
+  //});
+  drone.on("error", (error) => console.error(error));
+
+  return (
+    <div className="theDisplay">
+      <form onSubmit={stopIt}>
+        <label>
+          <input
+            className="inputText"
+            type="text"
+            value={value}
+            onChange={texting}
+            placeholder="type"
+          />
+        </label>
+        <button type="submit" className="botunDisplay" disabled={!value}>
+          Sumbit
+        </button>
+      </form>
+      {list.map((value, index) => (
+        <div className="positioning" key={index}>
+          {name}
+          {value}
+        </div>
+      ))}
+    </div>
+  );
+}
