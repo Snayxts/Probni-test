@@ -231,3 +231,80 @@ export default function App() {
     </div>
   );
 }
+
+
+//import React, { useState } from "react";
+import "./App.css";
+
+export default function App() {
+  const [messages, setMessages] = useState([]);
+
+  //INPUT INPUT INPUTINPUTINPUT INPUTINPUT INPUT INPUT INPUT INPUT INPUT
+  const [input, setInput] = useState("");
+  const onChange = (event) => {
+    setInput(event.target.value);
+  };
+  const onSumbit = (event) => {
+    event.preventDefault();
+    setInput("");
+  };
+  console.log(input);
+  //
+  //
+  //
+  // CONNECT CONNECT CONNECT CONNECT CONNECT
+  const CLIENT_ID = "1MOSLJAQfNkm8NXq";
+
+  const drone = new window.ScaleDrone(CLIENT_ID, {
+    data: "s", //member,
+  });
+
+  drone.on("open", (error) => {
+    if (error) {
+      return console.error(error);
+    }
+    console.log("Successfully connected to Scaledrone");
+
+    //SUBSCRIBE
+    const room = drone.subscribe("observable-room");
+    room.on("open", (error) => {
+      if (error) {
+        return console.error(error);
+      }
+      console.log("Successfully joined room");
+    });
+
+    room.on("data", (text, member) => {
+      //....
+    });
+  });
+
+  drone.on("close", (event) => {
+    console.log("Connection was closed", event);
+  });
+
+  drone.on("error", (error) => {
+    console.error(error);
+  });
+
+  const onNewMessage = (message) => {
+    drone.publish({
+      room: "observable-room",
+      message,
+    });
+  };
+  //_______________________________________________________________________________________
+  return (
+    <div>
+      <form onSubmit={onSumbit}>
+        <input
+          type="text"
+          placeholder="message"
+          onChange={onChange}
+          value={input}
+        />
+        <button disabled={!input}>Sumbit</button>
+      </form>
+    </div>
+  );
+}
