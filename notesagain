@@ -308,3 +308,65 @@ export default function App() {
     </div>
   );
 }
+
+
+/css
+/* Glavni DIV */
+.theDisplay {
+  position: relative;
+  border: 2px solid black;
+
+  margin: 0 auto;
+  width: 980px;
+  height: 900px;
+}
+
+/* pozicija inputa i botuna */
+.botuniinput {
+  position: relative;
+  bottom: -90vh;
+  right: -8vh;
+}
+
+/* input */
+.inputText {
+  border: 2px solid greenyellow;
+  border-radius: 8px;
+  height: 25px;
+  width: 770px;
+}
+/* BOTUN */
+.botun {
+  background-color: greenyellow;
+  color: blueviolet;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 3px;
+}
+
+/* Pozicija poruka */
+.positioning {
+  width: 820px;
+}
+
+/* prikaz poruka */
+
+/* botun */
+
+/* Poruke pozicionirati ih */
+.position-messages {
+  padding: 5px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 8px;
+  word-break: break-all;
+  width: fit-content;
+  max-width: 30vh;
+  clear: right;
+  float: right;
+  background-color: red;
+}
+
+/*
+*/

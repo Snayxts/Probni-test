@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./components/Helpers";
 
 export default function App() {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
   const [name, setName] = useState(getRandomName()); //POSTAVITI IME
-
   function getRandomName() {
     const adjs = ["Tom", "Jenny", "Lea", "Nick"];
     const nouns = ["Clank: ", "Ratchet: ", "Cooper: ", "Nion: "];
@@ -15,18 +15,13 @@ export default function App() {
       nouns[Math.floor(Math.random() * nouns.length)]
     );
   }
-
-  function getRandomColor() {
-    return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
-  }
-
   const texting = (event) => {
     setValue(event.target.value);
   };
 
   function stopIt(event) {
     event.preventDefault();
-    setList([...list, value]);
+    setList([...list, name + value]);
 
     setValue("");
   }
@@ -52,7 +47,8 @@ export default function App() {
       {list.map((value, index) => (
         <div className="positioning" key={index}>
           <div className="position-messages">
-            {name}
+            {/* {name} */}
+
             {value}
           </div>
         </div>
