@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import getRandomName from "./components/Helpers";
+import { randomColor } from "./components/Helpers";
 
 export default function App() {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
-  const [name, setName] = useState(getRandomName()); //POSTAVITI IME
+  const [name, setName] = useState(getRandomName());
+  const [color, setColor] = useState(randomColor());
 
   const texting = (event) => {
     setValue(event.target.value);
@@ -38,9 +40,8 @@ export default function App() {
 
       {list.map((value, index) => (
         <div className="positioning" key={index}>
-          <div className="position-messages">
-            {/* {name} */}
-
+          {/* dodao COLOR, kasnije vj izmjeniti, trenutacno testiram jeli sve radi ok */}
+          <div className="position-messages" style={{ color: color }}>
             {value}
           </div>
         </div>
