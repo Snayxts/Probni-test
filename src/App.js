@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import "./components/Helpers";
+import getRandomName from "./components/Helpers";
 
 export default function App() {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
   const [name, setName] = useState(getRandomName()); //POSTAVITI IME
-  function getRandomName() {
-    const adjs = ["Tom", "Jenny", "Lea", "Nick"];
-    const nouns = ["Clank: ", "Ratchet: ", "Cooper: ", "Nion: "];
-    return (
-      adjs[Math.floor(Math.random() * adjs.length)] +
-      " " +
-      nouns[Math.floor(Math.random() * nouns.length)]
-    );
-  }
+
   const texting = (event) => {
     setValue(event.target.value);
   };
