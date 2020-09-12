@@ -10,11 +10,54 @@
 }
 
 @media screen and (max-width: 800px) {
-  .botuniinput {
-    position: fixed;
-    flex: auto;
-    width: 10%;
+  .theDisplay > .botuniinput {
+    width: 90%;
   }
+}
+
+@media screen and (max-width: 800px) {
+  .theDisplay > .botuniinput {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .theDisplay > .input-botun {
+    width: 10px;
+  }
+}
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Messages-message.currentUser {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Header */
+.header {
+  display: block;
+  padding: 10px;
+  background-color: lightblue;
+}
+.header-text {
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.Message-content {
+  word-break: break-all;
+  width: fit-content;
+}
+.text {
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 2px;
 }
 
 /* Glavni DIV */
@@ -23,33 +66,26 @@
   margin: 0 auto;
   max-width: 980px;
   height: 855px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   overflow-y: auto;
   scroll-behavior: smooth;
 }
 
 .botuniinput {
   border: 2px solid blue;
+  border-radius: 8px;
   position: fixed;
   width: 103.5vh;
   bottom: 30px;
   padding: 4.3px;
 }
+.input-botun {
+  position: relative;
+  left: 270px;
+}
 
-/* Poruke, I break u njima */
-.position-messages {
-  /* padding: 5px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 8px;
-  word-break: break-all;
-  width: fit-content;
-  background-color: red; */
-  /*  */
-  /*justify-content: flex-end;*/
-  flex-direction: row-reverse;
-  text-align: right;
+.input {
+  width: 350px;
 }
 
 .inputText {
@@ -57,6 +93,7 @@
   left: 200px;
   width: 400px;
 }
+
 .botun {
   position: relative;
   left: 210px;
