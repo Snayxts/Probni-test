@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Messages(props) {
   const { messages } = props;
 
+  //scroll down automatic
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(scrollToBottom, [messages]);
+
   return (
     <div className="Messages-list">
       {messages.map((m, index) => renderMessage(m, index))}
+      <div ref={messagesEndRef} />
     </div>
   );
 

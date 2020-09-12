@@ -68,7 +68,6 @@
   height: 855px;
   /* border: 2px solid black; */
   overflow-y: auto;
-  scroll-behavior: smooth;
 }
 
 .botuniinput {
