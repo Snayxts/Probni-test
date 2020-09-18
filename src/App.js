@@ -42,7 +42,8 @@ export default function App() {
       });
 
       room.on("data", (text, user) => {
-        messages.push({ user, text });
+        let time = new Date().toLocaleTimeString();
+        messages.push({ user, text, time });
         setMessages([...messages]);
       });
     });
@@ -63,8 +64,8 @@ export default function App() {
       <div className="theDisplay">
         <Messages
           messages={messages}
-          currentUser={user}
           style={{ color: user.color }}
+          currentUser={user}
         />
         <Input onSendMessage={onSendMessage} />
       </div>

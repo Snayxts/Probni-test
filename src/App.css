@@ -22,9 +22,24 @@
 }
 
 @media screen and (max-width: 800px) {
-  .theDisplay > .input-botun {
-    width: 10px;
+  .input-botun .input {
+    width: 50%;
   }
+}
+@media screen and (max-width: 800px) {
+  .botuniinput > .input-botun {
+    position: relative;
+    left: 95px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .botuniinput > .input-botun {
+    position: relative;
+    left: 55px;
+  }
+}
+body {
+  background-color: rgba(201, 76, 76, 0.1);
 }
 
 .Messages-message {
@@ -72,10 +87,11 @@
 
 .botuniinput {
   border: 2px solid blue;
+  background-color: lightblue;
   border-radius: 8px;
   position: fixed;
   width: 103.5vh;
-  bottom: 30px;
+  bottom: 10px;
   padding: 4.3px;
 }
 .input-botun {
@@ -97,4 +113,27 @@
   position: relative;
   left: 210px;
   border-radius: 6px;
+}
+
+.showandclosebotun {
+  position: relative;
+  top: -22px;
+  left: 590px;
+  border: none;
+  background-color: white;
+}
+
+.getEmojiButton {
+  position: absolute;
+  bottom: 50px;
+  left: 250px;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.date {
+  text-align: center;
+  font-size: 20px;
 }

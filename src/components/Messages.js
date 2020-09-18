@@ -11,15 +11,24 @@ export default function Messages(props) {
   };
   useEffect(scrollToBottom, [messages]);
 
+  let today = new Date(),
+    date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+
   return (
     <div className="Messages-list">
+      <div className="date">{date}</div>
       {messages.map((m, index) => renderMessage(m, index))}
       <div ref={messagesEndRef} />
     </div>
   );
 
   function renderMessage(message, index) {
-    const { user, text } = message;
+    const { user, text, time } = message;
     const { currentUser } = props;
     const messageFromMe = user.id === currentUser.id;
     const className = messageFromMe
@@ -36,11 +45,13 @@ export default function Messages(props) {
           >
             {text}
           </div>
+          {time}
         </div>
       </div>
     );
   }
 }
+
 Messages.defaultProps = {
   message: "",
   username: "",
