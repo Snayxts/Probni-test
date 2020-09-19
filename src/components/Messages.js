@@ -13,11 +13,11 @@ export default function Messages(props) {
 
   let today = new Date(),
     date =
-      today.getFullYear() +
+      today.getDate() +
       "-" +
       (today.getMonth() + 1) +
       "-" +
-      today.getDate();
+      today.getFullYear();
 
   return (
     <div className="Messages-list">
@@ -51,8 +51,3 @@ export default function Messages(props) {
     );
   }
 }
-
-Messages.defaultProps = {
-  message: "",
-  username: "",
-};

@@ -38,9 +38,6 @@
     left: 55px;
   }
 }
-body {
-  background-color: rgba(201, 76, 76, 0.1);
-}
 
 .Messages-message {
   display: flex;
@@ -86,21 +83,38 @@ body {
 }
 
 .botuniinput {
-  border: 2px solid blue;
-  background-color: lightblue;
+  border: 2px solid #000000;
+  background-color: rgb(0, 0, 0, 0.7);
   border-radius: 8px;
   position: fixed;
   width: 103.5vh;
   bottom: 10px;
-  padding: 4.3px;
 }
 .input-botun {
   position: relative;
-  left: 270px;
+  left: 160px;
 }
 
 .input {
-  width: 350px;
+  position: relative;
+  bottom: -13px;
+  width: 550px;
+  padding: 8px;
+  border: none;
+  border-radius: 18px;
+}
+.botun-botun {
+  position: relative;
+  bottom: -13px;
+  padding: 5px;
+  left: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.botun-botun:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(110, 0, 110, 0.5);
 }
 
 .inputText {
@@ -109,16 +123,10 @@ body {
   width: 400px;
 }
 
-.botun {
-  position: relative;
-  left: 210px;
-  border-radius: 6px;
-}
-
 .showandclosebotun {
   position: relative;
-  top: -22px;
-  left: 590px;
+  top: -15px;
+  left: 680px;
   border: none;
   background-color: white;
 }
@@ -126,7 +134,7 @@ body {
 .getEmojiButton {
   position: absolute;
   bottom: 50px;
-  left: 250px;
+  left: 350px;
   border: none;
   margin: 0;
   cursor: pointer;

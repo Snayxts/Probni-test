@@ -41,7 +41,9 @@ export default function Input(props) {
           onChange={ChangeText}
           value={value}
         />
-        <button disabled={!value}>Sumbit</button>
+        <button className="botun-botun" disabled={!value}>
+          Sumbit
+        </button>
       </form>
 
       <span>
