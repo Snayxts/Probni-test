@@ -1,4 +1,10 @@
 @media screen and (max-width: 800px) {
+  .body {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .theDisplay {
     width: 90%;
   }
@@ -39,14 +45,16 @@
   }
 }
 
-.Messages-message {
-  display: flex;
-  margin-top: 10px;
+@media screen and (max-width: 500px) {
+  .input-botun > .show-and-close-botun {
+    position: relative;
+    left: 55px;
+  }
 }
 
-.Messages-message.currentUser {
-  flex-direction: row-reverse;
-  text-align: right;
+body {
+  box-sizing: content-box;
+  background-color: rgb(211, 211, 211, 0.8);
 }
 
 /* Header */
@@ -62,86 +70,12 @@
   font-size: 17px;
 }
 
-.Message-content {
-  word-break: break-all;
-  width: fit-content;
-}
-.text {
-  font-size: 18px;
-  border-radius: 8px;
-  padding: 2px;
-}
+/* Main DIV */
 
-/* Glavni DIV */
 .theDisplay {
   position: relative;
   margin: 0 auto;
   max-width: 980px;
   height: 855px;
-  /* border: 2px solid black; */
   overflow-y: auto;
-}
-
-.botuniinput {
-  border: 2px solid #000000;
-  background-color: rgb(0, 0, 0, 0.7);
-  border-radius: 8px;
-  position: fixed;
-  width: 103.5vh;
-  bottom: 10px;
-}
-.input-botun {
-  position: relative;
-  left: 160px;
-}
-
-.input {
-  position: relative;
-  bottom: -13px;
-  width: 550px;
-  padding: 8px;
-  border: none;
-  border-radius: 18px;
-}
-.botun-botun {
-  position: relative;
-  bottom: -13px;
-  padding: 5px;
-  left: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.botun-botun:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(110, 0, 110, 0.5);
-}
-
-.inputText {
-  position: relative;
-  left: 200px;
-  width: 400px;
-}
-
-.showandclosebotun {
-  position: relative;
-  top: -15px;
-  left: 680px;
-  border: none;
-  background-color: white;
-}
-
-.getEmojiButton {
-  position: absolute;
-  bottom: 50px;
-  left: 350px;
-  border: none;
-  margin: 0;
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-.date {
-  text-align: center;
-  font-size: 20px;
 }

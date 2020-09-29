@@ -1,0 +1,58 @@
+.botuniinput {
+  border-radius: 8px;
+  position: fixed;
+  width: 103.5vh;
+  bottom: 10px;
+}
+.input-botun {
+  position: relative;
+  left: 160px;
+}
+
+.input {
+  position: relative;
+  bottom: -13px;
+  width: 550px;
+  padding: 8px;
+  border: none;
+  border-radius: 18px;
+}
+
+.botun-botun:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(110, 0, 110, 0.5);
+}
+
+.inputText {
+  position: relative;
+  left: 200px;
+  width: 400px;
+}
+
+.botun-botun {
+  position: relative;
+  background-color: lightskyblue;
+  bottom: -13px;
+  padding: 5px;
+  left: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.show-and-close-botun {
+  position: relative;
+  top: -15px;
+  left: 680px;
+  border: none;
+  background-color: white;
+}
+
+.getEmojiButton {
+  position: absolute;
+  bottom: 50px;
+  left: 350px;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0.8;
+}

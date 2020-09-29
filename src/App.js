@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+
+import {
+  getRandomName,
+  randomColor,
+  Input,
+  Messages,
+} from "./components/Index";
+
 import "./App.css";
-import getRandomName from "./components/Helpers";
-import { randomColor } from "./components/Helpers";
-import Input from "./components/Input";
-import Messages from "./components/Messages";
 
 export default function App() {
   const [user, setUser] = useState({
@@ -27,6 +31,7 @@ export default function App() {
       if (error) {
         return console.error(error);
       }
+
       console.log(user.username + " connected to scaledrone!");
 
       user.id = drone.clientId;
@@ -61,12 +66,14 @@ export default function App() {
       <div className="header">
         <div className="header-text">Chat App</div>
       </div>
+
       <div className="theDisplay">
         <Messages
           messages={messages}
           style={{ color: user.color }}
           currentUser={user}
         />
+
         <Input onSendMessage={onSendMessage} />
       </div>
     </div>

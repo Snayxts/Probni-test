@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
+import "./Input.css";
 
 export default function Input(props) {
   const [value, setValue] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
 
-  const ChangeText = (event) => {
+  function ChangeText(event) {
     setValue(event.target.value);
-  };
+  }
 
   // EMOJIS
   const showEmojis2 = () => {
@@ -41,13 +42,15 @@ export default function Input(props) {
           onChange={ChangeText}
           value={value}
         />
+
         <button className="botun-botun" disabled={!value}>
           Sumbit
         </button>
       </form>
 
+      {/* emoji icon */}
       <span>
-        <button className="showandclosebotun" onClick={showEmojis2}>
+        <button className="show-and-close-botun" onClick={showEmojis2}>
           {String.fromCodePoint(0x1f60a)}
         </button>
 

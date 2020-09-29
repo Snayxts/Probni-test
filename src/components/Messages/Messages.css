@@ -1,0 +1,47 @@
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Messages-message.currentUser {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.Message-content {
+  word-break: break-all;
+  width: fit-content;
+}
+
+.text {
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.showDate {
+  text-align: center;
+  font-size: 20px;
+}
+
+.showDate::before {
+  content: "";
+  position: relative;
+  top: -5px;
+  display: inline-flex;
+  width: 435px;
+  height: 1px;
+  padding: 0.2px;
+  background-color: gray;
+}
+
+.showDate::after {
+  content: "";
+  display: inline-flex;
+  position: relative;
+  top: -5px;
+  width: 435px;
+  height: 1px;
+  padding: 0.2px;
+  background-color: gray;
+}
