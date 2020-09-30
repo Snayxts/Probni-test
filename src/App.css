@@ -1,10 +1,4 @@
 @media screen and (max-width: 800px) {
-  .body {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 800px) {
   .theDisplay {
     width: 90%;
   }
@@ -45,10 +39,29 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .input-botun > .show-and-close-botun {
+@media screen and (max-width: 800px) {
+  .show-and-close-botun {
     position: relative;
-    left: 55px;
+    left: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .show-and-close-botun {
+    position: relative;
+    left: 180px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .getEmojiButton {
+    left: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .getEmojiButton {
+    left: 10px;
+    bottom: 80px;
+    opacity: 0.4;
   }
 }
 
